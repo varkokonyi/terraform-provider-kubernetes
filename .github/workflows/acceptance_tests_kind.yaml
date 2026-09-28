@@ -38,8 +38,7 @@ env:
   
 jobs:
   acceptance_tests_kind:
-    if: ${{ github.repository_owner == 'hashicorp' }}
-    runs-on: custom-linux-large
+    runs-on: ubuntu-latest
     strategy:
       # Don't cancel all in-progress and queued jobs in the matrix if any job in the matrix fails.
       # That will be helpful to catch any issues related to a particular Kubernetes version.
