@@ -5,16 +5,16 @@ on:
     inputs:
       kindVersion:
         description: The kind version
-        default: 0.20.0
+        default: 0.30.0
       runTests:
         description: The regex passed to the -run option of `go test`
-        default: "^TestAcc"
+        default: "^TestAccKubernetesStorageClassV1"
       terraformVersion:
         description: Terraform version
-        default: 1.12.0
+        default: 1.15.9
       parallelRuns:
         description: The maximum number of tests to run simultaneously
-        default: 8
+        default: 1
   pull_request:
     branches:
       - main
@@ -33,8 +33,8 @@ on:
 env:
   KUBECONFIG: ${{ github.workspace }}/.kube/config
   KIND_VERSION: ${{ github.event.inputs.kindVersion || '0.30.0' }}
-  PARALLEL_RUNS: ${{ github.event.inputs.parallelRuns || '8' }}
-  TERRAFORM_VERSION: ${{ github.event.inputs.terraformVersion || '1.12.0' }} 
+  PARALLEL_RUNS: ${{ github.event.inputs.parallelRuns || '1' }}
+  TERRAFORM_VERSION: ${{ github.event.inputs.terraformVersion || '1.15.9' }} 
   
 jobs:
   acceptance_tests_kind:
