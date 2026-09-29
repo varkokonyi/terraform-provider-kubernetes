@@ -20,7 +20,7 @@ import (
 func TestAccKubernetesStorageClassV1_minikube(t *testing.T) {
 	var conf api.StorageClass
 	name := fmt.Sprintf("tf-acc-test-%s", acctest.RandStringFromCharSet(10, acctest.CharSetAlphaNum))
-	resourceName := "kubernetes_storage_class.test"
+	resourceName := "kubernetes_storage_class_v1.test"
 
 	resource.ParallelTest(t, resource.TestCase{
 		PreCheck:          func() { testAccPreCheck(t); skipIfNotRunningInMinikube(t) },
