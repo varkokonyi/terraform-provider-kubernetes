@@ -47,8 +47,8 @@ func TestAccKubernetesStorageClassV1_minikube(t *testing.T) {
 					resource.TestCheckResourceAttr(resourceName, "volume_binding_mode", "Immediate"),
 					resource.TestCheckResourceAttr(resourceName, "allow_volume_expansion", "true"),
 					resource.TestCheckResourceAttr(resourceName, "mount_options.#", "2"),
-					resource.TestCheckResourceAttr(resourceName, "mount_options.0", "foo"),
-					resource.TestCheckResourceAttr(resourceName, "mount_options.1", "bar"),
+					resource.TestCheckResourceAttr(resourceName, "mount_options.1", "foo"),
+					resource.TestCheckResourceAttr(resourceName, "mount_options.0", "bar"),
 				),
 			},
 			{
