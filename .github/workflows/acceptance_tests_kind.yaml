@@ -82,7 +82,6 @@ jobs:
           minikube-version: ${{ env.MINIKUBE_VERSION }}
           kubernetes-version: ${{ matrix.kubernetes_version }}
           mount-path: ${{ github.workspace }}/.github/config/seccomp-profiles:/var/lib/kubelet/seccomp/profiles
-          start-args: --kubeconfig=${{ env.KUBECONFIG }}
       - name: Run Acceptance Test Suite
         env:
           KUBE_CONFIG_PATH: ${{ env.KUBECONFIG }}
